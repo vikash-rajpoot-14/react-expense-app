@@ -1,20 +1,16 @@
 import React from 'react'
 import "./ExpenseItem.css"
+import ExpenseDate from './ExpenseDate'
 
-function ExpenseItem() {
-    let date = new Date(25,1,2023)
-    console.log(date)
-    let carname = "Honda";
-    let price = 29.5;
-    let LocationOfExpenditure  = "GOA"
+function ExpenseItem({title,amount,date}) {
+   
     return (
         <div>
             <div className="expense-item">
-                <div>{carname}</div>
+               <ExpenseDate date={date}/>
                 <div className="expense-item__description">
-                    <h2>{date.toISOString()}</h2>
-                    <div style={{color:'white'}}>{LocationOfExpenditure}</div>
-                    <div className="expense-item__price">${price}</div>
+                    <h2>{title}</h2>
+                    <div className="expense-item__price">${amount}</div>
                 </div>
             </div>
         </div>

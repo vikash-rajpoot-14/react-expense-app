@@ -1,19 +1,17 @@
 import React from 'react'
 import "./ExpenseItem.css"
 import ExpenseDate from './ExpenseDate'
+import Card from '../UI/Card'
+import "../UI/Card.css"
+import ExpenseDetails from './ExpenseDetails'
 
-function ExpenseItem({title,amount,date}) {
-   
+
+const ExpenseItem = ({ title, amount, date, location }) =>{
     return (
-        <div>
-            <div className="expense-item">
-               <ExpenseDate date={date}/>
-                <div className="expense-item__description">
-                    <h2>{title}</h2>
-                    <div className="expense-item__price">${amount}</div>
-                </div>
-            </div>
-        </div>
+        <Card className="expense-item">
+            <ExpenseDate date={date} />
+            <ExpenseDetails amount={amount} location={location} title={title} />
+        </Card>
     )
 }
 

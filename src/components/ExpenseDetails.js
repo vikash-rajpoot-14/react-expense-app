@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ExpenseDetails=({title,amount , location})=> {
+const ExpenseDetails = ({id,deleteHandler, array, title, amount, location }) => {
+    const [titles, setTitle] = useState(title)
+
+    const DeleteHandler = () => {
+        array = array.filter(ele=>ele.id !== id)
+        setTitle("updated")
+        deleteHandler(array)
+      
+    }
+
     return (
         <React.Fragment>
             <div className="expense-item__description">
-                <h2>{title}</h2>
+                <h2>{titles}</h2>
                 <div>{location}</div>
                 <div className="expense-item__price">${amount}</div>
+                <button onClick={(e)=>DeleteHandler()}>change title</button>
             </div>
         </React.Fragment>
     )

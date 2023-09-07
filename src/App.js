@@ -1,3 +1,4 @@
+import ExpenseForm from "./components/ExpenseForm";
 import Expenses from "./components/Expenses";
 import React from 'react'
 
@@ -31,6 +32,7 @@ const App = ()=> {
   return (
     <React.Fragment>
     <h2>Let's get started!</h2>
+      <ExpenseForm/>
       <Expenses expenses={expenses}/>
     </React.Fragment>
   );

@@ -29,10 +29,15 @@ const App = ()=> {
 
     },
   ];
+  const AddNewExpense = (expense)=>{
+    console.log(expense);
+    expenses.push(expense);
+    console.log(expenses)
+  }
   return (
     <React.Fragment>
     <h2>Let's get started!</h2>
-      <ExpenseForm/>
+      <ExpenseForm newExpense={AddNewExpense}/>
       <Expenses expenses={expenses}/>
     </React.Fragment>
   );

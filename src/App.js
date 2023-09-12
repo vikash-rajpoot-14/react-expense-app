@@ -11,7 +11,6 @@ const App = ()=> {
       date: new Date(2020, 7, 14),
       location: "US"
     },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12),location : "England" },
     {
       id: 'e3',
       title: 'Car Insurance',
@@ -29,16 +28,20 @@ const App = ()=> {
 
     },
   ];
+ const AddExpenseTOArray=(expense)=>{
+    expenses.push(expense)
+  }
   const AddNewExpense = (expense)=>{
     console.log(expense);
-    expenses.push(expense);
+    AddExpenseTOArray(expense)
     console.log(expenses)
-  }
+}
+
   return (
     <React.Fragment>
     <h2>Let's get started!</h2>
       <ExpenseForm newExpense={AddNewExpense}/>
-      <Expenses expenses={expenses}/>
+      <Expenses expenses={expenses} />
     </React.Fragment>
   );
 }

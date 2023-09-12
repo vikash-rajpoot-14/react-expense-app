@@ -27,6 +27,7 @@ function ExpenseForm({newExpense}) {
             ...userInput
         }
         newExpense(expense)
+        setUserInput({title: "",amount : "",location : "",date:""})
     }
 
 

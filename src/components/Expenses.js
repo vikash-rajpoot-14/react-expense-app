@@ -5,7 +5,7 @@ import "./Expenses.css"
 
 const Expenses=({expenses})=> {
   const [expense,setExpense] = useState(expenses)
-   
+   console.log("after" , expense )
   return (
     <Card className="expenses">
       <ul>{expense.map((expense,index)=><ExpenseItem deleteHandler={setExpense} array={expenses} key={expense.id} id={expense.id} location={expense.location} date={expense.date} title={expense.title} amount={expense.amount} />)}</ul>

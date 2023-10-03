@@ -28,6 +28,7 @@ const App = ()=> {
 
     },
   ];
+  
  const AddExpenseTOArray=(expense)=>{
     expenses.push(expense)
   }

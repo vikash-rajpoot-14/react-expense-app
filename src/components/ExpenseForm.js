@@ -5,14 +5,13 @@ import "./ExpenseItem.css"
 
 function ExpenseForm({newExpense}) {
     const [userInput, setUserInput] = useState({title: "",amount : "",location : "",date:""})
-    // const [formData, setFormdata] = useState([])
 
     const titleHandler = (e) => {
         setUserInput((prev)=>{ return{...prev , title : e.target.value}})
     }
 
     const dateHandler = (e) => {
-        setUserInput((prev)=>{ return{...prev ,date: e.target.value}})
+        setUserInput((prev)=>{ return{...prev ,date: new Date(e.target.value)}})
     }
     const locationHandler = (e) => {
         setUserInput((prev)=>{ return {...prev ,location: e.target.value}})
@@ -23,7 +22,7 @@ function ExpenseForm({newExpense}) {
     const submitHandler = (e) => {
         e.preventDefault();
         let expense = {
-            id:Math.random().toFixed(3)*1000+"",
+            id: Math.random().toFixed(3)*1000+"",
             ...userInput
         }
         newExpense(expense)

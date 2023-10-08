@@ -1,9 +1,10 @@
 import ExpenseForm from "./components/ExpenseForm";
 import Expenses from "./components/Expenses";
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = ()=> {
-  const expenses = [
+ 
+  const DUMMYEXPENSE = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -29,20 +30,17 @@ const App = ()=> {
     },
   ];
   
- const AddExpenseTOArray=(expense)=>{
-    expenses.push(expense)
+  const [expense,setExpense] = useState(DUMMYEXPENSE);
+  const addExpenseHandler = expense=>{
+    setExpense((prevExpense)=>{
+      return [expense,...prevExpense]
+    })
   }
-  const AddNewExpense = (expense)=>{
-    console.log(expense);
-    AddExpenseTOArray(expense)
-    console.log(expenses)
-}
-
   return (
     <React.Fragment>
     <h2>Let's get started!</h2>
-      <ExpenseForm newExpense={AddNewExpense}/>
-      <Expenses expenses={expenses} />
+      <ExpenseForm newExpense={addExpenseHandler}/>
+      <Expenses expenses={expense} />
     </React.Fragment>
   );
 }

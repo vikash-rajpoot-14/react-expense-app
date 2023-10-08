@@ -6,11 +6,11 @@ import "../UI/Card.css"
 import ExpenseDetails from './ExpenseDetails'
 
 
-const ExpenseItem = ({id, array, deleteHandler, title, amount, date, location }) =>{
+const ExpenseItem = ({ title, amount, date, location }) =>{
     return (
         <Card className="expense-item">
             <ExpenseDate date={date} />
-            <ExpenseDetails id={id} deleteHandler={deleteHandler} array={array} amount={amount} location={location} title={title} />
+            <ExpenseDetails  amount={amount} location={location} title={title} />
         </Card>
     )
 }

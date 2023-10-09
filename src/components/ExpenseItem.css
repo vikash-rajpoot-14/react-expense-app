@@ -85,3 +85,17 @@
     margin: 5px;
     border-radius: 30px;
   }
+
+  
+  .formchild button{
+  background-color: #40005d;
+  border-radius: 10px;
+  color: white;
+  margin: 2px;
+  padding: 8px;
+  }
+
+  .formchild input{
+    border-radius: 20px;
+    padding: 4px;
+  }

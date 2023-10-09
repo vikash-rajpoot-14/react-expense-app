@@ -51,7 +51,7 @@ function ExpenseForm({newExpense}) {
                     <input value={userInput.date} onChange={dateHandler} name='date' type="date" />
                 </div>
                 <div className='formchild'>
-                    <button onClick={e=>submitHandler(e)} type="submit">submit</button>
+                    <button onClick={e=>submitHandler(e)} type="submit">Add Expense</button>
                 </div>
             </div>
         </Card>

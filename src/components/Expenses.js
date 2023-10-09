@@ -9,7 +9,7 @@ const Expenses = ({ expenses }) => {
   const selectedyearHandler = (selectedyear) => {
     setSelectedYear(selectedyear)
   }
-  const filteredExpense = expenses.filter((ele) => ele.date.getFullYear().toString() === selectedyear)
+  const filteredExpense = expenses.filter((ele) => new Date(ele.date).getFullYear().toString() === selectedyear)
   return (
     <Card className="expenses">
       <ExpenseFilter selected={selectedyear} onChangefilter={selectedyearHandler} />

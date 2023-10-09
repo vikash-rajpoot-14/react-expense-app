@@ -93,6 +93,7 @@
   color: white;
   margin: 2px;
   padding: 8px;
+  cursor: pointer;
   }
 
   .formchild input{

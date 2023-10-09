@@ -2,8 +2,8 @@ import ExpenseForm from "./components/ExpenseForm";
 import Expenses from "./components/Expenses";
 import React, { useState } from 'react'
 
-const App = ()=> {
- 
+const App = () => {
+  const [formToggle, setFormToggle] = useState(true)
   const DUMMYEXPENSE = [
     {
       id: 'e1',
@@ -29,17 +29,17 @@ const App = ()=> {
 
     },
   ];
-  
-  const [expense,setExpense] = useState(DUMMYEXPENSE);
-  const addExpenseHandler = expense=>{
-    setExpense((prevExpense)=>{
-      return [expense,...prevExpense]
+
+  const [expense, setExpense] = useState(DUMMYEXPENSE);
+  const addExpenseHandler = expense => {
+    setExpense((prevExpense) => {
+      return [expense, ...prevExpense]
     })
   }
   return (
     <React.Fragment>
-    <h2>Let's get started!</h2>
-      <ExpenseForm newExpense={addExpenseHandler}/>
+      <h2>Let's get started!</h2>
+      <ExpenseForm toggle={formToggle} setToggle={setFormToggle} newExpense={addExpenseHandler} />
       <Expenses expenses={expense} />
     </React.Fragment>
   );

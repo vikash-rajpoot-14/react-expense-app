@@ -2,9 +2,9 @@ import React from 'react'
 import "./ExpenseDate.css"
 
 const ExpenseDate=({date})=> {
-    let month = date.toLocaleString("en-US" , {month : "long"});
-    let day = date.toLocaleString("en-US" , {day : "2-digit"});
-    let year = date.getFullYear();
+    let month = new Date(date).toLocaleString("en-US" , {month : "long"});
+    let day = new Date(date).toLocaleString("en-US" , {day : "2-digit"});
+    let year =new Date(date).getFullYear();
   return (
     <div className='expense-date'>
       <div className='expense-date__month'>{month}</div>

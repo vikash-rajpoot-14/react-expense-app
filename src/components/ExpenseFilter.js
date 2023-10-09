@@ -8,8 +8,8 @@ function ExpenseFilter({ selected, onChangefilter }) {
       }
     return (
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", color: "white", margin: "10px" }}>
-            <div>
-                Year
+            <div style={{margin: "0px 0px 0px 28px"}}>
+                YEAR
             </div>
             <div>
                 <select id="year" value={selected} onChange={handleYearChange}>

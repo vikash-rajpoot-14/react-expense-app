@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 import "./Expenses.css"
 import ExpenseFilter from './ExpenseFilter';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = ({ expenses }) => {
   const [selectedyear, setSelectedYear] = useState("2020");
@@ -12,6 +13,7 @@ const Expenses = ({ expenses }) => {
   const filteredExpense = expenses.filter((ele) => new Date(ele.date).getFullYear().toString() === selectedyear)
   return (
     <Card className="expenses">
+      <ExpensesChart expenses={filteredExpense} />
       <ExpenseFilter selected={selectedyear} onChangefilter={selectedyearHandler} />
       {filteredExpense.length > 1 ? (
         <ul>{filteredExpense.map((expense) => <ExpenseItem key={expense.id} location={expense.location} date={expense.date} title={expense.title} amount={expense.amount} />)}</ul>
